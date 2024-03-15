@@ -34,14 +34,15 @@ const Editor=()=>{
 	const {id} = useParams();
 
 	useEffect(()=>{
-	 const quillServer = new Quill('#container',{theme:'snow', modules:{toolbar: toolbarOptions}})
+	 const quillServer = new Quill('#container',{theme:'snow', modules:{toolbar: toolbarOptions}});
 	 quillServer.disable();
 	 quillServer.setText('Loading the document...')
 	 SetQuill(quillServer);
 	},[]);
 
 	useEffect(()=>{
-		const socketServer = io('http://localhost:9000');
+		const socketServer = io('https://collaborative-document-editing-system-2.onrender.com');
+		// const socketServer = io('http://localhost:9000');
 		SetSocket(socketServer);
 		return ()=>{
 			socketServer.disconnect();

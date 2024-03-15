@@ -1,12 +1,12 @@
 import {Server} from 'socket.io';
 import Connection from './database/db.js';
 import { getDocument, updateDocument  } from './controllers/document-controller.js';
-
-const PORT= 9000;
+require("dotenv").config();
+const PORT= process.env.PORT||9000;
 Connection();
 const io = new Server(PORT,{
 	cors: {
-		origin: 'http://localhost:3000',
+		origin: ['http://localhost:3000', 'https://zingy-lollipop-550839.netlify.app/docs/cce06a0d-afb3-40a7-b616-961a36d59263'],
 		methods: ['GET', 'POST']
 	}
 });
