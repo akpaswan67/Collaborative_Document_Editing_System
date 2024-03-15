@@ -6,7 +6,7 @@ const PORT= process.env.PORT||9000;
 Connection();
 const io = new Server(PORT,{
 	cors: {
-		origin: ['http://localhost:3000', 'https://65f44986e552cf644651a0ac--flourishing-squirrel-b7bcd8.netlify.app/'],
+		origin: ['http://localhost:3000', 'https://zingy-lollipop-550839.netlify.app/docs/632a724d-b17d-460a-b5fd-82a67f056f54'],
 		methods: ['GET', 'POST']
 	}
 });
